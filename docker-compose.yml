@@ -2,6 +2,8 @@ services:
   openclaw:
     build: .
     restart: unless-stopped
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     env_file:
       - /opt/alphaclaw/shared/.env
     volumes:
